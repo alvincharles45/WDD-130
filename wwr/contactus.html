@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Dry Oar</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    #feedback {
+      background-color: antiquewhite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: .5em;
+      display: none;
+    }
+
+    .moveDown {
+      margin-top: 3em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: 4rem auto;
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.6rem;
+      background-color: #2c5f2d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1f4020;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 style="text-align: center;">Contact Us</h1>
+
+    <div id="feedback"></div>
+
+    <form>
+      <label for="user_name">Name:</label>
+      <input type="text" id="user_name" name="user_name" required />
+
+      <label for="user_email">Email:</label>
+      <input type="email" id="user_email" name="user_email" required />
+
+      <label for="user_message">Message:</label>
+      <textarea id="user_message" name="user_message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <script>
+    const feedbackElement = document.getElementById('feedback');
+    const formElement = document.forms[0];
+
+    formElement.addEventListener('submit', function(e) {
+      e.preventDefault();
+      feedbackElement.innerHTML = 'Hello ' + formElement.user_name.value + '! Thank you for your message. We will get back with you as soon as possible!';
+      feedbackElement.style.display = "block";
+      document.body.classList.toggle('moveDown');
+    });
+  </script>
+</body>
+</html>
