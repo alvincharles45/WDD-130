@@ -1,0 +1,191 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap');
+
+/* Root Variables */
+:root {
+  --primary-color: #396E94;     /* Navy blue */
+  --secondary-color: #E7C24F;   /* Golden yellow */
+  --accent1-color: #A42212;     /* Rich red */
+  --accent2-color: #FFFFFF;     /* White */
+
+  --heading-font: 'IM Fell French Canon SC', serif;
+  --paragraph-font: 'Lato', sans-serif;
+
+  --text-dark: #1e1e1e;
+  --bg-light: #f9f9f9;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--paragraph-font);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--accent2-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* Hero Banner */
+.hero-banner img,
+.hero {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Section Layout */
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Features Icons on Home Page */
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.features div {
+  max-width: 150px;
+}
+
+.features img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent1-color);
+  color: var(--accent2-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Diet Page Boxes */
+.diet-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.diet-section div {
+  background-color: white;
+  border-left: 6px solid var(--accent1-color);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.tips {
+  background-color: #fff8dc;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 6px solid var(--secondary-color);
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+footer .socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .socials img {
+  height: 24px;
+  width: 24px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .diet-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features {
+    justify-content: space-evenly;
+  }
+}
