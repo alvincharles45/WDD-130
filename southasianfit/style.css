@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap');
 
+/* CSS Variables */
 :root {
   --primary-color: #2C5F2D;
   --secondary-color: #97BC62;
   --accent-color: #F25C05;
   --light-bg: #f9f9f9;
-  --dark-text: #2C5F2D;
+  --dark-text: #1e1e1e;
 
-  --heading-font: 'IM Fell French Canon SC', serif;
-  --body-font: 'Lato', sans-serif;
+  --heading-font: "IM Fell French Canon SC", serif;
+  --body-font: "Lato", sans-serif;
 }
 
+/* Reset + Base */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -24,87 +27,137 @@ body {
   line-height: 1.6;
 }
 
+/* Header & Navigation */
 header {
   background-color: var(--primary-color);
-}
-
-.navbar {
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  flex-wrap: wrap;
 }
 
-.navbar .logo img {
-  height: 40px;
+.logo {
+  height: 60px;
 }
 
-.nav-links {
+.navbar {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
 
-.nav-links a {
-  text-decoration: none;
+.navbar li a {
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-  background-color: var(--secondary-color);
-  color: white;
-}
-
-.page-title {
+/* Main Section */
+.workout-section {
+  padding: 2.5rem 1rem;
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
-  margin: 2rem 0;
-  font-size: 2.5rem;
-  font-family: var(--heading-font);
-  color: var(--primary-color);
 }
 
+.workout-section h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+}
+
+/* Workout Cards */
 .workout-card {
   background-color: white;
-  max-width: 800px;
-  margin: 2rem auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
 }
 
 .workout-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
-.workout-content {
-  padding: 1.5rem;
-}
-
-.workout-content h2 {
+.workout-card h2 {
   font-family: var(--heading-font);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  font-size: 2rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.workout-content ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.workout-card ul {
+  text-align: left;
+  list-style: disc;
+  padding-left: 2rem;
   font-size: 1rem;
+  color: #444;
 }
 
+.workout-card li {
+  margin-bottom: 0.75rem;
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 1rem;
   background-color: var(--primary-color);
   color: white;
+  text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .workout-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .workout-card {
+    padding: 1.5rem;
+  }
+
+  .workout-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .workout-card ul {
+    font-size: 0.95rem;
+  }
 }
