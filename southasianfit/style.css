@@ -1,244 +1,163 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap');
 
-/* Root Variables */
+/* CSS Variables */
 :root {
   --primary-color: #2C5F2D;
   --secondary-color: #97BC62;
-  --accent1-color: #F25C05;
-  --accent2-color: #FFFFFF;
+  --accent-color: #F25C05;
+  --light-bg: #f9f9f9;
+  --dark-text: #1e1e1e;
 
   --heading-font: "IM Fell French Canon SC", serif;
-  --paragraph-font: "Lato", Helvetica, sans-serif;
-
-  --headline-color-on-white: #2C5F2D;
-  --headline-color-on-color: white;
-  --paragraph-color-on-white: #2C5F2D;
+  --body-font: "Lato", sans-serif;
 }
 
-/* Global Styles */
-body {
+/* Reset + Base */
+* {
   margin: 0;
-  font-family: var(--paragraph-font);
-  background-color: var(--accent2-color);
-  color: var(--paragraph-color-on-white);
+  padding: 0;
+  box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+body {
+  font-family: var(--body-font);
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  color: var(--headline-color-on-white);
-}
-
-/* Navbar */
-.navbar {
+/* Header & Navigation */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
-  padding: 0.75rem 1.5rem;
+  flex-wrap: wrap;
 }
 
-.navbar .logo {
-  width: 60px;
-  height: auto;
+.logo {
+  height: 60px;
 }
 
-.nav-links {
+.navbar {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
 
-.nav-links li a {
+.navbar li a {
+  color: white;
   text-decoration: none;
-  color: var(--accent2-color);
+  font-weight: 700;
   font-size: 1.1rem;
-  font-weight: bold;
-  transition: color 0.3s;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: var(--accent1-color);
-}
-
-/* Hero Section (Homepage & Workout Pages) */
-.hero {
+.navbar li a:hover,
+.navbar li a.active {
   background-color: var(--secondary-color);
-  text-align: center;
-  padding: 4rem 1rem 2rem;
+  border-radius: 5px;
 }
 
-.hero img {
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  margin: 1rem 0;
-  color: var(--primary-color);
-}
-
-.hero p {
-  font-size: 1rem;
-  color: var(--paragraph-color-on-white);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Cards Section (Homepage & Workout Days) */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 2rem 1rem;
+/* Main Section */
+.workout-section {
+  padding: 2.5rem 1rem;
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
+  margin: auto;
   text-align: center;
-  transition: transform 0.2s;
 }
 
-.card:hover {
+.workout-section h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+}
+
+/* Workout Cards */
+.workout-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.workout-card:hover {
   transform: translateY(-5px);
 }
 
-.card img {
+.workout-card img {
   width: 100%;
-  height: auto;
-  border-bottom: 3px solid var(--accent1-color);
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
-.card h2 {
-  font-size: 1.25rem;
-  margin: 1rem 0 0.5rem;
+.workout-card h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.card p {
-  font-size: 0.95rem;
-  padding: 0 1rem 1rem;
-  color: var(--paragraph-color-on-white);
+.workout-card ul {
+  text-align: left;
+  list-style: disc;
+  padding-left: 2rem;
+  font-size: 1rem;
+  color: #444;
 }
 
-/* Call to Action Button */
-.cta-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent1-color);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #d64b00;
+.workout-card li {
+  margin-bottom: 0.75rem;
 }
 
 /* Footer */
 footer {
   background-color: var(--primary-color);
-  color: var(--accent2-color);
+  color: white;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   font-size: 0.9rem;
 }
 
-footer a {
-  color: var(--accent2-color);
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--accent1-color);
-}
-
-/* Workout Page Specific */
-.workout-main {
-  padding: 2rem 1rem;
-}
-
-.hero-workout img {
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.hero-workout h1 {
-  font-size: 2.2rem;
-  margin-top: 1rem;
-  color: var(--primary-color);
-}
-
-.hero-workout p {
-  max-width: 800px;
-  margin: 1rem auto 2rem;
-  font-size: 1rem;
-  color: var(--paragraph-color-on-white);
-}
-
-.workout-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
-}
-
-.workout-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 1rem;
-  text-align: center;
-}
-
-.workout-card img {
-  border-radius: 6px;
-}
-
-.workout-card h2 {
-  font-size: 1.2rem;
-  margin-top: 0.75rem;
-  color: var(--primary-color);
-}
-
-.workout-card p {
-  font-size: 0.95rem;
-  color: var(--paragraph-color-on-white);
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1rem;
   }
 
-  .nav-links li a {
-    font-size: 1rem;
+  .logo {
+    height: 50px;
+    margin-bottom: 1rem;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .workout-section h1 {
+    font-size: 2.2rem;
   }
 
-  .hero p,
-  .hero-workout p {
+  .workout-card {
+    padding: 1.5rem;
+  }
+
+  .workout-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .workout-card ul {
     font-size: 0.95rem;
   }
 }
