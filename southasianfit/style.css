@@ -1,181 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap');
 
 :root {
   --primary-color: #2C5F2D;
   --secondary-color: #97BC62;
   --accent1-color: #F25C05;
-  --accent2-color: #FFFFFF;
+  --accent2-color: #ffffff;
 
   --heading-font: "IM Fell French Canon SC", serif;
   --paragraph-font: "Lato", sans-serif;
 
   --headline-color-on-white: #2C5F2D;
-  --headline-color-on-color: white;
   --paragraph-color-on-white: #2C5F2D;
-  --paragraph-color-on-color: white;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--paragraph-font);
-  background-color: #f9f9f9;
   color: var(--paragraph-color-on-white);
+  background-color: var(--accent2-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* ============ NAVBAR ============ */
 header {
   background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
-header img {
+header img.logo {
   height: 60px;
-  width: auto;
-}
-
-nav {
-  display: flex;
-  gap: 1.5rem;
 }
 
 nav a {
-  color: white;
+  color: var(--accent2-color);
   text-decoration: none;
+  margin-left: 1.5rem;
   font-size: 1.1rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 700;
 }
 
 nav a:hover {
-  color: var(--accent1-color);
+  text-decoration: underline;
 }
 
+/* ============ HERO SECTION ============ */
 .hero {
   background-color: var(--secondary-color);
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .hero img {
   max-width: 100%;
   height: auto;
+  max-height: 400px;
 }
 
-.hero-text {
-  margin-top: 1rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--headline-color-on-white);
-}
-
-main {
-  padding: 2rem 1rem;
-  background-color: #fff;
+/* ============ FEATURE CARDS SECTION ============ */
+.features {
   text-align: center;
+  padding: 3rem 1rem;
+}
+
+.features h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
 }
 
 .card-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--accent2-color);
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 280px;
+  width: 250px;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  border-radius: 6px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 5px;
 }
 
 .card h3 {
-  font-family: var(--heading-font);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   color: var(--primary-color);
-  margin: 0.8rem 0 0.4rem;
 }
 
 .card p {
   font-size: 0.9rem;
-  color: #555;
+  color: #333;
 }
 
+/* ============ CTA BUTTON ============ */
 .cta-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
   padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 20px;
-  margin-top: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-button:hover {
-  background-color: var(--accent1-color);
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
 }
 
+/* ============ FOOTER ============ */
 footer {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--accent2-color);
   text-align: center;
   padding: 1.5rem 1rem;
-  font-size: 0.9rem;
+  margin-top: auto;
 }
 
-footer a {
-  color: white;
+footer .social-icons img {
+  height: 24px;
   margin: 0 0.5rem;
-  text-decoration: none;
-  font-size: 0.95rem;
+  vertical-align: middle;
 }
 
-footer a:hover {
-  color: var(--accent1-color);
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  nav a {
-    font-size: 1rem;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
+footer p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
 }
