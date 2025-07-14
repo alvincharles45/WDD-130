@@ -1,191 +1,103 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato&display=swap');
 
-/* Root Variables */
 :root {
-  --primary-color: #396E94;     /* Navy blue */
-  --secondary-color: #E7C24F;   /* Golden yellow */
-  --accent1-color: #A42212;     /* Rich red */
-  --accent2-color: #FFFFFF;     /* White */
-
-  --heading-font: 'IM Fell French Canon SC', serif;
-  --paragraph-font: 'Lato', sans-serif;
-
-  --text-dark: #1e1e1e;
-  --bg-light: #f9f9f9;
-}
-
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --primary-color: #2c5f2d;
+  --secondary-color: #97bc62;
+  --accent-color: #f25c05;
+  --background: #f9f9f9;
+  --text-dark: #1a1a1a;
 }
 
 body {
-  font-family: var(--paragraph-font);
-  background-color: var(--bg-light);
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--background);
   color: var(--text-dark);
-  line-height: 1.6;
 }
 
-/* Header */
 header {
-  background-color: var(--primary-color);
-  color: var(--accent2-color);
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  height: 60px;
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  color: var(--accent2-color);
-  text-decoration: none;
+  font-family: 'IM Fell French Canon SC', serif;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
-nav a:hover {
-  color: var(--secondary-color);
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-/* Hero Banner */
-.hero-banner img,
-.hero {
+.hero img {
   width: 100%;
-  max-height: 400px;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
-/* Section Layout */
-main {
-  padding: 2rem;
+.intro {
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-section {
-  margin-bottom: 2.5rem;
-}
-
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
+.intro h1 {
   font-size: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
-h3 {
-  font-size: 1.4rem;
-}
-
-ul {
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-/* Features Icons on Home Page */
-.features {
+.cards {
   display: flex;
-  justify-content: space-around;
-  margin: 2rem 0;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 200px;
   text-align: center;
 }
 
-.features div {
-  max-width: 150px;
-}
-
-.features img {
+.card img {
   width: 100%;
   border-radius: 8px;
 }
 
-/* CTA Button */
 .cta-button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent1-color);
-  color: var(--accent2-color);
-  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid black;
+  border-radius: 25px;
   text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 1rem;
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--accent-color);
+  color: white;
 }
 
-/* Diet Page Boxes */
-.diet-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.diet-section div {
-  background-color: white;
-  border-left: 6px solid var(--accent1-color);
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-.tips {
-  background-color: #fff8dc;
-  padding: 1rem;
-  border-radius: 5px;
-  border-left: 6px solid var(--secondary-color);
-  margin-top: 2rem;
-}
-
-/* Footer */
 footer {
-  background-color: var(--primary-color);
-  color: var(--accent2-color);
+  background-color: white;
   text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ddd;
 }
 
-footer .socials {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-footer .socials img {
-  height: 24px;
+.social-icons a img {
   width: 24px;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-  .diet-section {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .features {
-    justify-content: space-evenly;
-  }
+  margin: 0 0.5rem;
+  vertical-align: middle;
 }
