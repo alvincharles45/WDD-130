@@ -1,55 +1,78 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>South Asian Fit | Diet & Nutrition</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>South Asian Fit | Nutrition</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <img src="styles/logo.png" alt="South Asian Fit Logo" class="logo" />
+    <img src="styles/logo.png" alt="South Asian Fit Logo" class="logo"/>
     <nav>
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="workout.html">Workout Plans</a></li>
-        <li><a href="nutrition.html" class="active">Diet & Nutrition</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="workout.html">Workouts</a>
+      <a href="nutrition.html" class="active">Nutrition</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="styles/traditional_meal.png" alt="Healthy South Asian Meal" />
-    </section>
+  <!-- Hero image, now using our .hero-img class -->
+  <section class="hero">
+    <img 
+      src="styles/traditional_meal.png" 
+      alt="Healthy South Asian Meal" 
+      class="hero-img"
+    />
+  </section>
 
-    <section class="cards">
-      <div class="card">
-        <img src="styles/traditional_meal.png" alt="Balanced Thali" />
-        <h2>Balanced Thali</h2>
-        <p>Understand how to build a balanced plate with protein, carbs, fiber, and healthy fats from familiar foods.</p>
-      </div>
-      <div class="card">
-        <img src="styles/supplements.png" alt="Supplements" />
-        <h2>Supplement Tips</h2>
-        <p>Explore essential vitamins and supplements for South Asians, such as B12, Vitamin D, and omega-3s.</p>
-      </div>
-      <div class="card">
-        <img src="styles/hydration.png" alt="Hydration" />
-        <h2>Hydration</h2>
-        <p>Stay hydrated with smart strategies to increase water intake while reducing sugary drinks.</p>
+  <main>
+    <section>
+      <h2>Diet &amp; Nutrition</h2>
+      <div class="card-container">
+        <!-- Balanced Thali Card -->
+        <div class="card">
+          <img 
+            src="styles/traditional_meal.png" 
+            alt="Balanced Thali" 
+            class="card-img"
+          />
+          <h3>Balanced Thali</h3>
+          <p>Build a balanced plate with protein, carbs, fiber, and healthy fats from familiar foods. A Balanced Thali brings together the flavors and nutrition of South Asian cuisine in perfect harmony. Start with a generous serving of lean protein—such as spiced chickpea curry, tandoori chicken, or lentil dal—paired with complex carbohydrates like brown rice, whole‐wheat roti, or millet khichdi. Add colorful vegetable sides—think sautéed spinach with garlic, roasted cauliflower tossed with turmeric, and tangy cucumber raita—to boost fiber, vitamins, and antioxidants. A small spoon of ghee or a drizzle of cold‑pressed mustard oil lends essential healthy fats and enhances absorption of fat‑soluble nutrients. By combining these elements on one plate, you’ll feel satisfied, energized, and ready to power through your day with the rich traditions of home‑style cooking.</p>
+        </div>
+
+        <!-- Supplement Tips Card -->
+        <div class="card">
+          <img 
+            src="styles/nutrition_supplements.png" 
+            alt="Supplement Tips" 
+            class="card-img"
+          />
+          <h3>Supplement Tips</h3>
+          <p>Explore essential vitamins and supplements like B12, Vitamin D, and omega‑3s. While whole foods should always be your first source of nutrients, smart supplementation can help fill in gaps and support your fitness goals. Look for high‑quality, third‑party–tested vitamins—such as vitamin D3 for immune health, B12 for energy metabolism, and omega‑3 fish oil for joint support and inflammation control. Take vitamin D with a meal containing fat to improve absorption, and split B‑complex doses between morning and early afternoon to avoid sleep interference. Always read labels closely and stick to recommended dosages; more is not always better. Finally, consult your doctor before introducing new supplements, especially if you’re on medications or have a health condition, to ensure everything works safely together.</p>
+        </div>
+
+        <!-- Hydration Card -->
+        <div class="card">
+          <img 
+            src="styles/nutrition_hydration.png" 
+            alt="Hydration" 
+            class="card-img"
+          />
+          <h3>Hydration</h3>
+          <p>Stay hydrated with smart strategies to boost water intake and cut sugary drinks. Proper hydration is a cornerstone of performance, recovery, and overall well‑being—especially in hot, humid climates. Aim to sip water consistently throughout the day rather than gulping large amounts only when thirsty. Infuse your water with slices of cucumber, lemon, or mint for extra electrolytes and refreshing flavor. Coconut water is another excellent option, providing natural potassium and magnesium to replenish what you lose during workouts. Keep a reusable water bottle nearby as a visual reminder, and set small hourly goals (e.g., one full bottle by lunchtime) to stay on track. By maintaining steady fluid intake, you’ll support nutrient transport, muscle function, and clear, glowing skin.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 South Asian Fit. All rights reserved.</p>
-    <a href="site-plan.html">Site Plan</a>
     <div class="social-icons">
-      <img src="styles/facebook.png" alt="Facebook" />
-      <img src="styles/instagram.png" alt="Instagram" />
-      <img src="styles/youtube.png" alt="YouTube" />
+      <a href="#"><img src="styles/facebook.png" alt="Facebook"/></a>
+      <a href="#"><img src="styles/twitter.png" alt="Twitter"/></a>
+      <a href="#"><img src="styles/instagram.png" alt="Instagram"/></a>
     </div>
+    <p>© 2025 South Asian Fit</p>
+    <a href="site-plan.html" class="plan-link">Site Plan</a>
   </footer>
 </body>
 </html>
