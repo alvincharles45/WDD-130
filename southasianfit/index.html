@@ -16,9 +16,15 @@
     </nav>
   </header>
 
- 
-
   <main>
+    <!-- Event Countdown Section -->
+    <section class="event-countdown">
+      <h2>🔥 Next Live Workout Event</h2>
+      <p>Join us on <strong>August 10, 2025 at 6:00 PM</strong> for a full-body live workout session streamed via Zoom and Instagram Live. No equipment needed — just show up with energy, water, and motivation!</p>
+      <p class="countdown-timer" id="countdown"></p>
+    </section>
+
+    <!-- Feature Cards -->
     <section>
       <h2>Your Guide to Strength and Confidence</h2>
       <div class="card-container">
@@ -51,5 +57,27 @@
     <p>© 2024 South Asian Fit</p>
     <a href="site-plan.html" class="plan-link">Site Plan</a>
   </footer>
+
+  <!-- Countdown JavaScript -->
+  <script>
+    var countDownDate = new Date("Aug 10, 2025 18:00:00").getTime();
+    var countdownFunction = setInterval(function() {
+      var now = new Date().getTime();
+      var timeLeft = countDownDate - now;
+
+      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (timeLeft < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "💪 We are LIVE now!";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
